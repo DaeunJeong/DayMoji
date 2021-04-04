@@ -13,6 +13,7 @@
 		1BA30BB02619847400B86DC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA30BAE2619847400B86DC6 /* LaunchScreen.storyboard */; };
 		1BA30BBA261984AD00B86DC6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA30BB8261984AD00B86DC6 /* MainViewController.swift */; };
 		1BA30BBB261984AD00B86DC6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA30BB9261984AD00B86DC6 /* MainViewController.xib */; };
+		88CB3EFD97F9421769F0D18F /* Pods_DayMoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4322E19437DFB4ADFB74C53 /* Pods_DayMoji.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		1BA30BB12619847400B86DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA30BB8261984AD00B86DC6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1BA30BB9261984AD00B86DC6 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		7D2CFA81927705C985DDDBDF /* Pods-DayMoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayMoji.release.xcconfig"; path = "Target Support Files/Pods-DayMoji/Pods-DayMoji.release.xcconfig"; sourceTree = "<group>"; };
+		C3F726686D00ED0FDAA9B3F8 /* Pods-DayMoji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayMoji.debug.xcconfig"; path = "Target Support Files/Pods-DayMoji/Pods-DayMoji.debug.xcconfig"; sourceTree = "<group>"; };
+		C4322E19437DFB4ADFB74C53 /* Pods_DayMoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayMoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CB3EFD97F9421769F0D18F /* Pods_DayMoji.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				1BA30BA22619847200B86DC6 /* DayMoji */,
 				1BA30BA12619847200B86DC6 /* Products */,
+				B39C08043531D360AB9FB2CA /* Pods */,
+				DFB81AAC9852219FC74565AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = DayMoji;
 			sourceTree = "<group>";
 		};
+		B39C08043531D360AB9FB2CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3F726686D00ED0FDAA9B3F8 /* Pods-DayMoji.debug.xcconfig */,
+				7D2CFA81927705C985DDDBDF /* Pods-DayMoji.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DFB81AAC9852219FC74565AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4322E19437DFB4ADFB74C53 /* Pods_DayMoji.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BA30BB42619847400B86DC6 /* Build configuration list for PBXNativeTarget "DayMoji" */;
 			buildPhases = (
+				47E441CD3581E4372089A7DB /* [CP] Check Pods Manifest.lock */,
 				1BA30B9C2619847200B86DC6 /* Sources */,
 				1BA30B9D2619847200B86DC6 /* Frameworks */,
 				1BA30B9E2619847200B86DC6 /* Resources */,
+				94A99602D31580F40B5DD796 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47E441CD3581E4372089A7DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayMoji-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94A99602D31580F40B5DD796 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayMoji/Pods-DayMoji-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayMoji/Pods-DayMoji-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayMoji/Pods-DayMoji-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1BA30B9C2619847200B86DC6 /* Sources */ = {
@@ -275,6 +344,7 @@
 		};
 		1BA30BB52619847400B86DC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3F726686D00ED0FDAA9B3F8 /* Pods-DayMoji.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +365,7 @@
 		};
 		1BA30BB62619847400B86DC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D2CFA81927705C985DDDBDF /* Pods-DayMoji.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
