@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,13 @@
 		1BA30BB02619847400B86DC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA30BAE2619847400B86DC6 /* LaunchScreen.storyboard */; };
 		1BA30BBA261984AD00B86DC6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA30BB8261984AD00B86DC6 /* MainViewController.swift */; };
 		1BA30BBB261984AD00B86DC6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA30BB9261984AD00B86DC6 /* MainViewController.xib */; };
+		1BA69F9E261A03F3000DE7B4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA69F9D261A03F3000DE7B4 /* MainViewModel.swift */; };
+		1BC9BBB3264816B800F64EE2 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9BBB2264816B800F64EE2 /* IntExtension.swift */; };
+		1BC9BBB52648171400F64EE2 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9BBB42648171400F64EE2 /* DateExtension.swift */; };
+		1BFF0EBF26199BE400DF84BA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF0EBE26199BE400DF84BA /* Colors.xcassets */; };
+		1BFF0EC62619A5AA00DF84BA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF0EC52619A5AA00DF84BA /* UIColorExtension.swift */; };
+		1BFF0ED2261A029400DF84BA /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF0ED0261A029400DF84BA /* DiaryCell.swift */; };
+		1BFF0ED3261A029400DF84BA /* DiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF0ED1261A029400DF84BA /* DiaryCell.xib */; };
 		88CB3EFD97F9421769F0D18F /* Pods_DayMoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4322E19437DFB4ADFB74C53 /* Pods_DayMoji.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +32,13 @@
 		1BA30BB12619847400B86DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA30BB8261984AD00B86DC6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1BA30BB9261984AD00B86DC6 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1BA69F9D261A03F3000DE7B4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1BC9BBB2264816B800F64EE2 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		1BC9BBB42648171400F64EE2 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		1BFF0EBE26199BE400DF84BA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1BFF0EC52619A5AA00DF84BA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1BFF0ED0261A029400DF84BA /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
+		1BFF0ED1261A029400DF84BA /* DiaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCell.xib; sourceTree = "<group>"; };
 		7D2CFA81927705C985DDDBDF /* Pods-DayMoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayMoji.release.xcconfig"; path = "Target Support Files/Pods-DayMoji/Pods-DayMoji.release.xcconfig"; sourceTree = "<group>"; };
 		C3F726686D00ED0FDAA9B3F8 /* Pods-DayMoji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayMoji.debug.xcconfig"; path = "Target Support Files/Pods-DayMoji/Pods-DayMoji.debug.xcconfig"; sourceTree = "<group>"; };
 		C4322E19437DFB4ADFB74C53 /* Pods_DayMoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayMoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,13 +79,52 @@
 			children = (
 				1BA30BA32619847200B86DC6 /* AppDelegate.swift */,
 				1BA30BA52619847200B86DC6 /* SceneDelegate.swift */,
-				1BA30BB8261984AD00B86DC6 /* MainViewController.swift */,
-				1BA30BB9261984AD00B86DC6 /* MainViewController.xib */,
-				1BA30BAC2619847400B86DC6 /* Assets.xcassets */,
 				1BA30BAE2619847400B86DC6 /* LaunchScreen.storyboard */,
+				1BFF0EC22619A56600DF84BA /* Main */,
+				1BFF0EC32619A57800DF84BA /* Assets */,
+				1BFF0EC42619A59400DF84BA /* Extensions */,
 				1BA30BB12619847400B86DC6 /* Info.plist */,
 			);
 			path = DayMoji;
+			sourceTree = "<group>";
+		};
+		1BFF0EC22619A56600DF84BA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF0EC82619A63200DF84BA /* Cells */,
+				1BA69F9D261A03F3000DE7B4 /* MainViewModel.swift */,
+				1BA30BB8261984AD00B86DC6 /* MainViewController.swift */,
+				1BA30BB9261984AD00B86DC6 /* MainViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1BFF0EC32619A57800DF84BA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1BA30BAC2619847400B86DC6 /* Assets.xcassets */,
+				1BFF0EBE26199BE400DF84BA /* Colors.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		1BFF0EC42619A59400DF84BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF0EC52619A5AA00DF84BA /* UIColorExtension.swift */,
+				1BC9BBB2264816B800F64EE2 /* IntExtension.swift */,
+				1BC9BBB42648171400F64EE2 /* DateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1BFF0EC82619A63200DF84BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF0ED0261A029400DF84BA /* DiaryCell.swift */,
+				1BFF0ED1261A029400DF84BA /* DiaryCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B39C08043531D360AB9FB2CA /* Pods */ = {
@@ -80,7 +133,6 @@
 				C3F726686D00ED0FDAA9B3F8 /* Pods-DayMoji.debug.xcconfig */,
 				7D2CFA81927705C985DDDBDF /* Pods-DayMoji.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA30BB02619847400B86DC6 /* LaunchScreen.storyboard in Resources */,
+				1BFF0EBF26199BE400DF84BA /* Colors.xcassets in Resources */,
+				1BFF0ED3261A029400DF84BA /* DiaryCell.xib in Resources */,
 				1BA30BAD2619847400B86DC6 /* Assets.xcassets in Resources */,
 				1BA30BBB261984AD00B86DC6 /* MainViewController.xib in Resources */,
 			);
@@ -207,8 +261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA30BA42619847200B86DC6 /* AppDelegate.swift in Sources */,
+				1BC9BBB52648171400F64EE2 /* DateExtension.swift in Sources */,
 				1BA30BA62619847200B86DC6 /* SceneDelegate.swift in Sources */,
+				1BC9BBB3264816B800F64EE2 /* IntExtension.swift in Sources */,
 				1BA30BBA261984AD00B86DC6 /* MainViewController.swift in Sources */,
+				1BFF0ED2261A029400DF84BA /* DiaryCell.swift in Sources */,
+				1BFF0EC62619A5AA00DF84BA /* UIColorExtension.swift in Sources */,
+				1BA69F9E261A03F3000DE7B4 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
