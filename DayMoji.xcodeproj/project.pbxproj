@@ -21,6 +21,7 @@
 		1BFF0ED2261A029400DF84BA /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF0ED0261A029400DF84BA /* DiaryCell.swift */; };
 		1BFF0ED3261A029400DF84BA /* DiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF0ED1261A029400DF84BA /* DiaryCell.xib */; };
 		88CB3EFD97F9421769F0D18F /* Pods_DayMoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4322E19437DFB4ADFB74C53 /* Pods_DayMoji.framework */; };
+		C4A6C19026497B6700AD7C9A /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A6C18F26497B6700AD7C9A /* Diary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7D2CFA81927705C985DDDBDF /* Pods-DayMoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayMoji.release.xcconfig"; path = "Target Support Files/Pods-DayMoji/Pods-DayMoji.release.xcconfig"; sourceTree = "<group>"; };
 		C3F726686D00ED0FDAA9B3F8 /* Pods-DayMoji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayMoji.debug.xcconfig"; path = "Target Support Files/Pods-DayMoji/Pods-DayMoji.debug.xcconfig"; sourceTree = "<group>"; };
 		C4322E19437DFB4ADFB74C53 /* Pods_DayMoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayMoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A6C18F26497B6700AD7C9A /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		1BFF0EC22619A56600DF84BA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C4A6C18E26497B5F00AD7C9A /* Models */,
 				1BFF0EC82619A63200DF84BA /* Cells */,
 				1BA69F9D261A03F3000DE7B4 /* MainViewModel.swift */,
 				1BA30BB8261984AD00B86DC6 /* MainViewController.swift */,
@@ -134,6 +137,14 @@
 				7D2CFA81927705C985DDDBDF /* Pods-DayMoji.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C4A6C18E26497B5F00AD7C9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4A6C18F26497B6700AD7C9A /* Diary.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DFB81AAC9852219FC74565AB /* Frameworks */ = {
@@ -265,6 +276,7 @@
 				1BA30BA62619847200B86DC6 /* SceneDelegate.swift in Sources */,
 				1BC9BBB3264816B800F64EE2 /* IntExtension.swift in Sources */,
 				1BA30BBA261984AD00B86DC6 /* MainViewController.swift in Sources */,
+				C4A6C19026497B6700AD7C9A /* Diary.swift in Sources */,
 				1BFF0ED2261A029400DF84BA /* DiaryCell.swift in Sources */,
 				1BFF0EC62619A5AA00DF84BA /* UIColorExtension.swift in Sources */,
 				1BA69F9E261A03F3000DE7B4 /* MainViewModel.swift in Sources */,

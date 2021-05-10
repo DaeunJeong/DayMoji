@@ -6,6 +6,7 @@ target 'DayMoji' do
   use_frameworks!
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
   pod 'RealmSwift'
   # Pods for DayMoji
 

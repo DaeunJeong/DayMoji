@@ -6,35 +6,27 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
 class MainViewController: UIViewController {
-    static func newInstance() -> MainViewController {
+    static func newInstance(viewModel: MainViewModel) -> MainViewController {
         let vc = MainViewController(nibName: "MainViewController", bundle: nil)
+        vc.viewModel = viewModel
         return vc
     }
 
     @IBOutlet weak var collectionView: UICollectionView!
-    private var diaries: [Diary] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
-    private let cellId = "DiaryCell"
+    
+    private var viewModel: MainViewModel!
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
         setupCollectionView()
-        
-        /*
-        diaries = [
-        Diary(emojiText: "🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀🤞😀", hint: "", date: Date(timeIntervalSinceNow: -876543)),
-            Diary(emojiText: "😀😀😀", hint: "", date: Date())
-        ]
-         */
+        viewModel.requestDiaries()
     }
     
     private func setupNavigationBar() {
@@ -47,9 +39,23 @@ class MainViewController: UIViewController {
     
     private func setupCollectionView() {
         collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
+        collectionView.register(UINib(nibName: "DiaryCell", bundle: nil), forCellWithReuseIdentifier: "DiaryCell")
         collectionView.contentInset = .init(top: 0, left: 24, bottom: 0, right: 24)
+        
+        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfDiary>(
+          configureCell: { dataSource, collectionView, indexPath, item in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath)
+            
+            if let cell = cell as? DiaryCell {
+                cell.diary = item
+                return cell
+            }
+            return cell
+        })
+        
+        viewModel.sections
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
     
     @objc private func tapAddButton() {
@@ -57,18 +63,7 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return diaries.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! DiaryCell
-        cell.diary = diaries[indexPath.row]
-        return cell
-    }
-    
+extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width - 48
         let height = width * 4 / 3
